@@ -3,43 +3,43 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>G&M Investment — Premium Furniture</title>
+  <title>G&M Investment — Premium Handcrafted Furniture</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-  <!-- NAVIGATION -->
+  <!-- NAV -->
   <header class="nav" id="navbar">
     <div class="nav__inner">
-      <a href="#" class="nav__logo">G<span>&amp;</span>M Investment</a>
+      <a href="#" class="nav__logo">G<span>&amp;</span>M <em>Investment</em></a>
       <nav>
         <ul class="nav__links">
-          <li><a href="#wardrobes">Wardrobes</a></li>
-          <li><a href="#vanity">Vanity</a></li>
           <li><a href="#beds">Beds</a></li>
+          <li><a href="#vanity">Vanity</a></li>
+          <li><a href="#wardrobes">Wardrobes</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
-      <button class="nav__cart" id="cartBtn" aria-label="Open cart">
-        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
-            d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4zm0 0h12M16 10a4 4 0 0 1-8 0"/>
-        </svg>
-        <span class="cart-count" id="cartCount">0</span>
-      </button>
-      <button class="nav__hamburger" id="hamburger" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </button>
+      <div class="nav__right">
+        <button class="nav__cart" id="cartBtn" aria-label="Cart">
+          <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+        <button class="nav__hamburger" id="hamburger"><span></span><span></span><span></span></button>
+      </div>
     </div>
   </header>
 
   <!-- MOBILE MENU -->
   <div class="mobile-menu" id="mobileMenu">
     <ul>
-      <li><a href="#wardrobes" class="mobile-link">Wardrobes</a></li>
-      <li><a href="#vanity" class="mobile-link">Vanity</a></li>
       <li><a href="#beds" class="mobile-link">Beds</a></li>
+      <li><a href="#vanity" class="mobile-link">Vanity</a></li>
+      <li><a href="#wardrobes" class="mobile-link">Wardrobes</a></li>
       <li><a href="#about" class="mobile-link">About</a></li>
       <li><a href="#contact" class="mobile-link">Contact</a></li>
     </ul>
@@ -48,163 +48,126 @@
   <!-- HERO -->
   <section class="hero" id="home">
     <div class="hero__bg"></div>
-    <div class="hero__content reveal">
-      <span class="hero__tag">Premium Collection 2026</span>
-      <h1 class="hero__headline">Invest in Your <br><span class="hero__accent">Living Space</span></h1>
-      <p class="hero__sub">Bespoke wardrobes, vanities, and beds crafted for those who value quality, elegance, and lasting value.</p>
+    <div class="hero__left reveal">
+      <span class="hero__eyebrow">Handcrafted in Guyana · Est. 2010</span>
+      <h1 class="hero__headline">Where Every<br><span>Piece Tells<br>a Story</span></h1>
+      <p class="hero__sub">Bespoke beds, vanities &amp; wardrobes crafted with precision for those who invest in their living space.</p>
       <div class="hero__ctas">
-        <a href="#wardrobes" class="btn btn--gold">Explore Collection</a>
-        <a href="#contact" class="btn btn--outline-light">Get a Quote</a>
+        <a href="#beds" class="btn btn--gold">Shop Collection</a>
+        <a href="#contact" class="btn btn--ghost">Request a Quote</a>
+      </div>
+      <div class="hero__tags">
+        <span>✦ Handcrafted</span>
+        <span>✦ Premium Quality</span>
+        <span>✦ Custom Orders</span>
       </div>
     </div>
-    <!-- 3D SHOWCASE CUBE -->
-    <div class="cube-scene reveal">
-      <div class="cube">
-        <div class="cube__face cube__face--front">
-          <svg viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="15" y="10" width="110" height="120" rx="6" fill="#1e3d2f" stroke="#c9a84c" stroke-width="1.5"/>
-            <line x1="70" y1="10" x2="70" y2="130" stroke="#c9a84c" stroke-width="1"/>
-            <rect x="60" y="68" width="20" height="5" rx="2.5" fill="#c9a84c"/>
-            <text x="70" y="155" font-family="Georgia" font-size="10" fill="#c9a84c" text-anchor="middle">Wardrobes</text>
-          </svg>
+    <div class="hero__right reveal">
+      <!-- 3D DIAMOND GEM -->
+      <div class="gem-wrap">
+        <div class="gem-glow"></div>
+        <canvas id="gemCanvas" width="380" height="380"></canvas>
+        <div class="gem-label">
+          <span>Premium</span>
+          <strong>Craftsmanship</strong>
         </div>
-        <div class="cube__face cube__face--back">
-          <svg viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M30 100 L30 30 Q30 10 70 10 Q110 10 110 30 L110 100 Z" fill="#1e3d2f" stroke="#c9a84c" stroke-width="1.5"/>
-            <rect x="20" y="100" width="100" height="8" rx="3" fill="#c9a84c" opacity=".6"/>
-            <rect x="30" y="108" width="35" height="25" rx="3" fill="#1e3d2f" stroke="#c9a84c" stroke-width="1"/>
-            <rect x="75" y="108" width="35" height="25" rx="3" fill="#1e3d2f" stroke="#c9a84c" stroke-width="1"/>
-          </svg>
-        </div>
-        <div class="cube__face cube__face--right">
-          <svg viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="10" y="55" width="120" height="65" rx="6" fill="#1e3d2f" stroke="#c9a84c" stroke-width="1.5"/>
-            <rect x="10" y="30" width="120" height="32" rx="6" fill="#2a5540" stroke="#c9a84c" stroke-width="1"/>
-            <circle cx="35" cy="46" r="7" fill="#c9a84c" opacity=".25" stroke="#c9a84c" stroke-width=".8"/>
-            <circle cx="70" cy="46" r="7" fill="#c9a84c" opacity=".25" stroke="#c9a84c" stroke-width=".8"/>
-            <circle cx="105" cy="46" r="7" fill="#c9a84c" opacity=".25" stroke="#c9a84c" stroke-width=".8"/>
-            <rect x="38" y="72" width="64" height="18" rx="5" fill="#c9a84c" opacity=".2" stroke="#c9a84c" stroke-width=".8"/>
-          </svg>
-        </div>
-        <div class="cube__face cube__face--left">
-          <svg viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="15" y="20" width="110" height="90" rx="5" fill="#0e0e0e" stroke="#c9a84c" stroke-width="1.5"/>
-            <circle cx="35" cy="24" r="4" fill="#c9a84c" opacity=".9"/>
-            <circle cx="55" cy="22" r="4" fill="#c9a84c" opacity=".9"/>
-            <circle cx="75" cy="22" r="4" fill="#c9a84c" opacity=".9"/>
-            <circle cx="95" cy="22" r="4" fill="#c9a84c" opacity=".9"/>
-            <circle cx="115" cy="24" r="4" fill="#c9a84c" opacity=".9"/>
-            <rect x="22" y="32" width="96" height="70" rx="3" fill="#1e3d2f"/>
-          </svg>
-        </div>
-        <div class="cube__face cube__face--top">
-          <div class="cube__face--top-inner">G<span>&amp;</span>M</div>
-        </div>
-        <div class="cube__face cube__face--bottom"></div>
       </div>
     </div>
-    <div class="hero__scroll-hint">
-      <span>Scroll</span>
-      <div class="hero__scroll-line"></div>
+    <div class="hero__scroll">
+      <div class="hero__scroll-track"></div>
+      <span>Scroll to explore</span>
     </div>
   </section>
 
-  <!-- CEO SECTION -->
-  <section class="ceo-section">
-    <div class="container ceo-section__inner">
-      <div class="ceo-section__img-wrap reveal">
-        <div class="ceo-section__img-ring"></div>
-        <img src="Picture/464863088_8596249647125072_1414952809224372626_n.jpg" alt="Marceline Small — CEO of G&M Investment" class="ceo-section__img" />
-        <div class="ceo-section__badge">CEO &amp; Founder</div>
-      </div>
-      <div class="ceo-section__text reveal">
-        <div class="section-header__label">— Leadership</div>
-        <h2 class="section-title">Meet Our CEO</h2>
-        <h3 class="ceo-section__name">Marceline Small</h3>
-        <p>Marceline Small founded G&amp;M Investment with a passion for transforming living spaces into places of lasting beauty and investment value. With over a decade of experience in premium furniture design and interior solutions, she leads a team dedicated to craftsmanship, elegance, and client satisfaction.</p>
-        <p>"Every home deserves furniture that tells a story. We don't just sell pieces — we craft legacies."</p>
-        <div class="ceo-section__quote-mark">"</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- STATS BAR -->
-  <div class="stats-bar">
-    <div class="container stats-bar__inner">
-      <div class="stat reveal"><strong class="count" data-target="14">0</strong><span>Years of Excellence</span></div>
-      <div class="stat reveal"><strong class="count" data-target="500">0</strong><span>Pieces Crafted</span></div>
-      <div class="stat reveal"><strong class="count" data-target="2000">0</strong><span>Happy Families</span></div>
-      <div class="stat reveal"><strong class="count" data-target="100">0</strong><span>% Hardwood</span></div>
+  <!-- MARQUEE -->
+  <div class="marquee-bar">
+    <div class="marquee-track">
+      <span>Beds &nbsp;✦&nbsp; Vanities &nbsp;✦&nbsp; Wardrobes &nbsp;✦&nbsp; Custom Orders &nbsp;✦&nbsp; Premium Quality &nbsp;✦&nbsp; Handcrafted &nbsp;✦&nbsp; Beds &nbsp;✦&nbsp; Vanities &nbsp;✦&nbsp; Wardrobes &nbsp;✦&nbsp; Custom Orders &nbsp;✦&nbsp; Premium Quality &nbsp;✦&nbsp; Handcrafted &nbsp;✦&nbsp;</span>
     </div>
   </div>
 
-  <!-- WARDROBES -->
-  <section class="product-section" id="wardrobes">
-    <div class="container">
-      <div class="section-header reveal">
-        <div class="section-header__label">— Wardrobes</div>
-        <h2 class="section-title">Bespoke Wardrobes</h2>
-        <p class="section-subtitle">Floor-to-ceiling storage crafted in solid hardwood with customisable interior fittings.</p>
-      </div>
-      <div class="product-grid" id="wardrobe-grid"></div>
-    </div>
-  </section>
-
-  <!-- VANITY -->
-  <section class="product-section product-section--alt" id="vanity">
-    <div class="container">
-      <div class="section-header reveal">
-        <div class="section-header__label">— Vanity</div>
-        <h2 class="section-title">Vanity Tables &amp; Sets</h2>
-        <p class="section-subtitle">Elegant dressing tables with integrated mirrors, lighting channels, and jewellery storage.</p>
-      </div>
-      <div class="product-grid" id="vanity-grid"></div>
+  <!-- STATS -->
+  <section class="stats">
+    <div class="container stats__grid">
+      <div class="stat-card reveal"><strong class="count" data-target="14">0</strong><span>Years of Excellence</span></div>
+      <div class="stat-card reveal"><strong class="count" data-target="500">0</strong><span>Pieces Crafted</span></div>
+      <div class="stat-card reveal"><strong class="count" data-target="2000">0</strong><span>Happy Homes</span></div>
+      <div class="stat-card reveal"><strong>100%</strong><span>Satisfaction Guarantee</span></div>
     </div>
   </section>
 
   <!-- BEDS -->
-  <section class="product-section" id="beds">
+  <section class="shop-section" id="beds">
     <div class="container">
-      <div class="section-header reveal">
-        <div class="section-header__label">— Beds</div>
-        <h2 class="section-title">Statement Beds</h2>
-        <p class="section-subtitle">Handcrafted bed frames from solid oak, walnut, and upholstered headboards in premium fabrics.</p>
+      <div class="section-head reveal">
+        <div class="section-head__line"></div>
+        <div class="section-head__text">
+          <p class="section-eyebrow">Category 01</p>
+          <h2>Statement Beds</h2>
+          <p class="section-desc">Upholstered in premium velvet &amp; fabric, each bed is a centrepiece crafted for lasting comfort and bold style.</p>
+        </div>
+        <div class="section-head__price-tag">From <strong>$85,000</strong></div>
       </div>
       <div class="product-grid" id="bed-grid"></div>
     </div>
   </section>
 
-  <!-- ABOUT -->
+  <!-- VANITY -->
+  <section class="shop-section shop-section--alt" id="vanity">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="section-head__line"></div>
+        <div class="section-head__text">
+          <p class="section-eyebrow">Category 02</p>
+          <h2>Vanity Tables</h2>
+          <p class="section-desc">Elegant white dressing tables with framed mirrors &amp; generous drawer storage — your personal luxury suite.</p>
+        </div>
+        <div class="section-head__price-tag">From <strong>$5,200</strong></div>
+      </div>
+      <div class="product-grid" id="vanity-grid"></div>
+    </div>
+  </section>
+
+  <!-- WARDROBES -->
+  <section class="shop-section" id="wardrobes">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="section-head__line"></div>
+        <div class="section-head__text">
+          <p class="section-eyebrow">Category 03</p>
+          <h2>Bespoke Wardrobes</h2>
+          <p class="section-desc">Floor-to-ceiling storage with mirror panels, glass doors &amp; deep drawers — designed for the discerning home.</p>
+        </div>
+        <div class="section-head__price-tag">From <strong>$62,000</strong></div>
+      </div>
+      <div class="product-grid" id="wardrobe-grid"></div>
+    </div>
+  </section>
+
+  <!-- CEO / ABOUT -->
   <section class="about" id="about">
     <div class="container about__inner">
-      <div class="about__text reveal">
-        <div class="section-header__label">— Our Story</div>
-        <h2 class="section-title">Built on Trust. Crafted with Pride.</h2>
-        <p>G&amp;M Investment began with a simple vision: furniture shouldn't just fill a room — it should define it. Since 2010, we've built a reputation for heirloom-quality pieces that blend timeless craftsmanship with contemporary design.</p>
-        <p>Every wardrobe, vanity, and bed that leaves our workshop is built to outlast trends, outlive wear, and grow more beautiful with time.</p>
-        <a href="#contact" class="btn btn--gold" style="margin-top:1.5rem">Book a Consultation</a>
+      <div class="about__img-side reveal">
+        <div class="about__img-frame">
+          <img src="Picture/464863088_8596249647125072_1414952809224372626_n.jpg" alt="Marceline Small — CEO G&M Investment" />
+        </div>
+        <div class="about__img-badge">
+          <strong>Marceline Small</strong>
+          <span>CEO &amp; Founder</span>
+        </div>
       </div>
-      <div class="about__features reveal">
-        <div class="feature-card">
-          <div class="feature-card__icon">🌳</div>
-          <h3>Sustainably Sourced</h3>
-          <p>All hardwoods are certified sustainable. We plant a tree for every piece sold.</p>
+      <div class="about__text reveal">
+        <p class="section-eyebrow">Our Story</p>
+        <h2>Built on Trust.<br>Crafted with Pride.</h2>
+        <blockquote>"Every home deserves furniture that tells a story. We don't just sell pieces — we craft legacies."</blockquote>
+        <p>G&amp;M Investment was founded with a single belief: premium furniture shouldn't be a luxury reserved for the few. Marceline Small built this company from the ground up, combining traditional craftsmanship with bold contemporary design to create pieces that transform everyday spaces into extraordinary homes.</p>
+        <div class="about__pillars">
+          <div><span>🌿</span><strong>Sustainable Materials</strong></div>
+          <div><span>🔨</span><strong>Hand-Finished</strong></div>
+          <div><span>🛡️</span><strong>Built to Last</strong></div>
+          <div><span>🎨</span><strong>Custom Colours</strong></div>
         </div>
-        <div class="feature-card">
-          <div class="feature-card__icon">🔨</div>
-          <h3>Hand-Jointed</h3>
-          <p>Traditional mortise &amp; tenon joinery. No cheap flat-pack construction.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-card__icon">🎨</div>
-          <h3>Custom Finishes</h3>
-          <p>Choose from 30+ stain and paint options. We match your interior exactly.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-card__icon">🛡️</div>
-          <h3>25-Year Warranty</h3>
-          <p>We stand behind every joint, finish, and fitting for a full 25 years.</p>
-        </div>
+        <a href="#contact" class="btn btn--gold">Book a Consultation</a>
       </div>
     </div>
   </section>
@@ -213,60 +176,36 @@
   <section class="contact" id="contact">
     <div class="container contact__inner">
       <div class="contact__info reveal">
-        <div class="section-header__label">— Find Us</div>
-        <h2 class="section-title">Visit Our Showroom</h2>
-        <p>See, touch, and experience our full collection in person. No appointment needed, though we're happy to arrange a private viewing.</p>
-        <ul class="contact__details">
-          <li>
-            <div class="contact__icon">📍</div>
-            <span>123 Oak Street, Maplewood, CA 91234</span>
-          </li>
-          <li>
-            <div class="contact__icon">📞</div>
-            <span>(555) 842-1930</span>
-          </li>
-          <li>
-            <div class="contact__icon">✉️</div>
-            <span>hello@gminvestment.com</span>
-          </li>
-          <li>
-            <div class="contact__icon">🕐</div>
-            <span>Mon–Sat 9am–6pm &nbsp;|&nbsp; Sun 11am–4pm</span>
-          </li>
+        <p class="section-eyebrow">Get in Touch</p>
+        <h2>Visit Our<br>Showroom</h2>
+        <p>Come see, touch, and experience our full collection. No appointment needed — walk-ins welcome.</p>
+        <ul class="contact__list">
+          <li><span class="ci">📍</span>123 Oak Street, Georgetown, Guyana</li>
+          <li><span class="ci">📞</span>(555) 842-1930</li>
+          <li><span class="ci">✉️</span>hello@gminvestment.com</li>
+          <li><span class="ci">🕐</span>Mon–Sat 9am–6pm &nbsp;|&nbsp; Sun 11am–4pm</li>
         </ul>
       </div>
       <form class="contact__form reveal" id="contactForm">
         <h3>Request a Quote</h3>
         <div class="form-row">
-          <div class="form-group">
-            <label for="fname">First Name</label>
-            <input type="text" id="fname" placeholder="First name" required />
-          </div>
-          <div class="form-group">
-            <label for="lname">Last Name</label>
-            <input type="text" id="lname" placeholder="Last name" required />
-          </div>
+          <div class="form-group"><label>First Name</label><input type="text" placeholder="First name" required /></div>
+          <div class="form-group"><label>Last Name</label><input type="text" placeholder="Last name" required /></div>
         </div>
+        <div class="form-group"><label>Email</label><input type="email" placeholder="you@email.com" required /></div>
         <div class="form-group">
-          <label for="email">Email</label>
-          <input type="email" id="email" placeholder="you@email.com" required />
-        </div>
-        <div class="form-group">
-          <label for="interest">I'm interested in</label>
-          <select id="interest">
-            <option value="">Select a category</option>
-            <option value="wardrobe">Wardrobes</option>
-            <option value="vanity">Vanity Tables</option>
-            <option value="beds">Beds</option>
-            <option value="bundle">Full Bedroom Set</option>
+          <label>Interested In</label>
+          <select>
+            <option value="">Select category</option>
+            <option>Beds ($85,000)</option>
+            <option>Vanity Tables ($5,200)</option>
+            <option>Wardrobes ($62,000)</option>
+            <option>Full Bedroom Set</option>
           </select>
         </div>
-        <div class="form-group">
-          <label for="message">Message</label>
-          <textarea id="message" rows="4" placeholder="Tell us about your space and what you're looking for..." required></textarea>
-        </div>
+        <div class="form-group"><label>Message</label><textarea rows="4" placeholder="Tell us about your space..."></textarea></div>
         <button type="submit" class="btn btn--gold" style="width:100%">Send Request</button>
-        <p class="form-success" id="formSuccess">Thank you! We'll be in touch within 24 hours.</p>
+        <p class="form-success" id="formSuccess">✓ Thank you! We'll be in touch within 24 hours.</p>
       </form>
     </div>
   </section>
@@ -275,28 +214,18 @@
   <footer class="footer">
     <div class="container footer__inner">
       <div class="footer__brand">
-        <span class="nav__logo">G<span>&amp;</span>M Investment</span>
-        <p>Premium furniture crafted for lasting value.</p>
+        <span class="nav__logo">G<span>&amp;</span>M <em>Investment</em></span>
+        <p>Premium handcrafted furniture.<br>Transforming houses into homes.</p>
       </div>
-      <div class="footer__links">
-        <h4>Shop</h4>
-        <ul>
-          <li><a href="#wardrobes">Wardrobes</a></li>
-          <li><a href="#vanity">Vanity</a></li>
-          <li><a href="#beds">Beds</a></li>
-        </ul>
+      <div class="footer__col"><h4>Shop</h4>
+        <a href="#beds">Beds</a><a href="#vanity">Vanity</a><a href="#wardrobes">Wardrobes</a>
       </div>
-      <div class="footer__links">
-        <h4>Company</h4>
-        <ul>
-          <li><a href="#about">About Us</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li><a href="#contact">Careers</a></li>
-        </ul>
+      <div class="footer__col"><h4>Company</h4>
+        <a href="#about">About Us</a><a href="#contact">Contact</a><a href="#contact">Custom Orders</a>
       </div>
     </div>
     <div class="footer__bottom">
-      <p>&copy; 2026 G&amp;M Investment. All rights reserved.</p>
+      <p>&copy; 2026 G&amp;M Investment. All rights reserved. · Georgetown, Guyana</p>
     </div>
   </footer>
 
@@ -304,18 +233,21 @@
   <div class="modal-overlay" id="modalOverlay">
     <div class="modal" id="modal">
       <button class="modal__close" id="modalClose">&times;</button>
-      <div class="modal__img" id="modalImg"></div>
+      <div class="modal__img-wrap"><img id="modalImg" src="" alt="" /></div>
       <div class="modal__body">
-        <span class="modal__cat" id="modalCat"></span>
-        <h2 class="modal__name" id="modalName"></h2>
-        <p class="modal__desc" id="modalDesc"></p>
+        <div class="modal__meta">
+          <span class="modal__cat" id="modalCat"></span>
+          <span class="modal__num" id="modalNum"></span>
+        </div>
+        <h2 id="modalName"></h2>
+        <p id="modalDesc"></p>
         <div class="modal__price" id="modalPrice"></div>
         <div class="modal__qty">
           <button class="qty-btn" id="qtyMinus">−</button>
           <span id="qtyValue">1</span>
           <button class="qty-btn" id="qtyPlus">+</button>
         </div>
-        <button class="btn btn--gold modal__add" id="modalAdd" style="width:100%;margin-top:1rem">Add to Cart</button>
+        <button class="btn btn--gold" id="modalAdd" style="width:100%;margin-top:1rem">Add to Cart</button>
       </div>
     </div>
   </div>
@@ -325,20 +257,16 @@
   <aside class="cart-sidebar" id="cartSidebar">
     <div class="cart-sidebar__header">
       <h3>Your Cart</h3>
-      <button class="cart-sidebar__close" id="cartClose">&times;</button>
+      <button id="cartClose">&times;</button>
     </div>
-    <div class="cart-sidebar__items" id="cartItems">
-      <p class="cart-empty">Your cart is empty.</p>
-    </div>
+    <div class="cart-sidebar__items" id="cartItems"><p class="cart-empty">Your cart is empty.</p></div>
     <div class="cart-sidebar__footer">
       <div class="cart-total">Total: <strong id="cartTotal">$0</strong></div>
       <button class="btn btn--gold" style="width:100%" onclick="showToast('Checkout coming soon!')">Checkout</button>
     </div>
   </aside>
 
-  <!-- TOAST -->
   <div class="toast" id="toast"></div>
-
   <script src="script.js"></script>
 </body>
 </html>
