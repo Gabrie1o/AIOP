@@ -1,11 +1,15 @@
 // ── WhatsApp ──────────────────────────────────────────────────
 const WA_NUMBER = '5926840094';
-function orderViaWhatsApp(product) {
-  const msg = `Hello G&M Investment! 👋\n\nI'd like to order the following:\n\n` +
+function orderViaWhatsApp(product, quantity) {
+  const q = quantity || 1;
+  const total = product.price * q;
+  const msg = `Hello G&M Investment! 👋\n\nI'd like to place an order:\n\n` +
     `🪑 *${product.name}*\n` +
     `🔢 Item No: ${product.num}\n` +
-    `💰 Price: ${fmt(product.price)}\n\n` +
-    `Please let me know availability and next steps. Thank you!`;
+    `💰 Price: ${fmt(product.price)} each\n` +
+    `📦 Quantity: ${q}\n` +
+    `🧾 *Total: ${fmt(total)}*\n\n` +
+    `Please confirm availability and next steps. Thank you!`;
   window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`, '_blank');
 }
 
@@ -61,6 +65,11 @@ function renderGrid(items, containerId) {
 const allProducts = [...beds, ...vanities, ...wardrobes];
 let currentProduct = null, qty = 1;
 
+function updateModalTotal() {
+  if (!currentProduct) return;
+  document.getElementById('modalTotal').textContent = fmt(currentProduct.price * qty);
+}
+
 function openModal(id) {
   const p = allProducts.find(x => x.id === id);
   if (!p) return;
@@ -71,8 +80,9 @@ function openModal(id) {
   document.getElementById('modalNum').textContent = p.num;
   document.getElementById('modalName').textContent = p.name;
   document.getElementById('modalDesc').textContent = p.desc;
-  document.getElementById('modalPrice').textContent = fmt(p.price);
+  document.getElementById('modalPrice').textContent = fmt(p.price) + ' each';
   document.getElementById('qtyValue').textContent = 1;
+  updateModalTotal();
   document.getElementById('modalOverlay').classList.add('open');
   document.body.style.overflow = 'hidden';
 }
@@ -82,9 +92,9 @@ function closeModal() {
 }
 document.getElementById('modalClose').addEventListener('click', closeModal);
 document.getElementById('modalOverlay').addEventListener('click', e => { if (e.target === document.getElementById('modalOverlay')) closeModal(); });
-document.getElementById('qtyMinus').addEventListener('click', () => { if (qty > 1) { qty--; document.getElementById('qtyValue').textContent = qty; } });
-document.getElementById('qtyPlus').addEventListener('click', () => { qty++; document.getElementById('qtyValue').textContent = qty; });
-document.getElementById('modalAdd').addEventListener('click', () => { if (currentProduct) { orderViaWhatsApp(currentProduct); closeModal(); } });
+document.getElementById('qtyMinus').addEventListener('click', () => { if (qty > 1) { qty--; document.getElementById('qtyValue').textContent = qty; updateModalTotal(); } });
+document.getElementById('qtyPlus').addEventListener('click', () => { qty++; document.getElementById('qtyValue').textContent = qty; updateModalTotal(); });
+document.getElementById('modalAdd').addEventListener('click', () => { if (currentProduct) { orderViaWhatsApp(currentProduct, qty); closeModal(); } });
 
 // ── Cart ──────────────────────────────────────────────────────
 let cart = [];

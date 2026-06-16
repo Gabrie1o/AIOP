@@ -208,7 +208,13 @@ body { font-family: var(--font-sans); background: var(--green-deep); color: var(
 .modal__body h2 { font-family: var(--font-serif); font-size: 1.5rem; color: var(--text); margin-bottom: .6rem; }
 .modal__body p { font-size: .84rem; color: var(--muted); line-height: 1.65; margin-bottom: 1rem; font-weight: 300; }
 .modal__price { font-family: var(--font-serif); font-size: 1.6rem; font-weight: 700; color: var(--gold); margin-bottom: 1.2rem; }
-.modal__qty { display: flex; align-items: center; gap: 1rem; margin-bottom: .5rem; }
+.modal__qty-section { margin-bottom: 1rem; }
+.modal__qty-label { display: block; font-family: var(--font-sans); font-size: .7rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--gold); margin-bottom: .6rem; }
+.modal__qty { display: flex; align-items: center; gap: 1rem; }
+
+.modal__total-box { display: flex; align-items: center; justify-content: space-between; background: var(--gold-dim); border: 1px solid var(--border); border-radius: 10px; padding: .9rem 1.2rem; margin-bottom: .2rem; }
+.modal__total-box span { font-family: var(--font-sans); font-size: .78rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.modal__total-box strong { font-family: var(--font-serif); font-size: 1.6rem; font-weight: 700; color: var(--gold); }
 .qty-btn { width: 34px; height: 34px; border-radius: 50%; border: 1.5px solid var(--border); background: none; color: var(--text); font-size: 1.1rem; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: var(--t); }
 .qty-btn:hover { border-color: var(--gold); color: var(--gold); }
 #qtyValue { font-family: var(--font-serif); font-size: 1.1rem; font-weight: 700; min-width: 24px; text-align: center; }
