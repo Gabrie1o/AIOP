@@ -234,6 +234,75 @@ body { font-family: var(--font-sans); background: var(--green-deep); color: var(
 .cart-total { font-family: var(--font-sans); font-size: .9rem; color: var(--muted); }
 .cart-total strong { font-family: var(--font-serif); font-size: 1.4rem; color: var(--gold); }
 
+/* ── WhatsApp Buttons ── */
+.btn-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  gap: .55rem;
+  padding: .6rem 1.1rem;
+  background: #25D366;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-family: var(--font-sans);
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+  cursor: pointer;
+  transition: var(--t);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.btn-whatsapp:hover { background: #1ebe5d; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(37,211,102,.35); }
+
+.btn--whatsapp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .7rem;
+  background: #25D366;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-family: var(--font-sans);
+  font-size: .9rem;
+  font-weight: 700;
+  letter-spacing: .05em;
+  cursor: pointer;
+  padding: .9rem 1.5rem;
+  transition: var(--t);
+}
+.btn--whatsapp:hover { background: #1ebe5d; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(37,211,102,.4); }
+
+/* Floating WhatsApp bubble */
+.wa-float {
+  position: fixed;
+  bottom: 2.2rem;
+  right: 2.2rem;
+  z-index: 998;
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  background: #25D366;
+  color: #fff;
+  text-decoration: none;
+  padding: .9rem 1.4rem .9rem 1.1rem;
+  border-radius: 100px;
+  box-shadow: 0 6px 32px rgba(37,211,102,.45);
+  font-family: var(--font-sans);
+  font-size: .82rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+  transition: var(--t);
+  animation: waBounce 2.5s ease-in-out infinite;
+}
+.wa-float:hover { background: #1ebe5d; transform: translateY(-3px) scale(1.04); box-shadow: 0 10px 40px rgba(37,211,102,.55); animation: none; }
+
+@keyframes waBounce {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-6px); }
+}
+
 /* ── Toast ── */
 .toast { position: fixed; bottom: 2.5rem; left: 50%; transform: translateX(-50%) translateY(80px); background: var(--green-mid); border: 1px solid var(--border); color: var(--text); padding: .85rem 2rem; border-radius: 100px; font-family: var(--font-sans); font-size: .85rem; font-weight: 500; box-shadow: 0 8px 32px rgba(0,0,0,.5); opacity: 0; transition: transform .35s ease, opacity .35s ease; pointer-events: none; z-index: 999; white-space: nowrap; }
 .toast.show { transform: translateX(-50%) translateY(0); opacity: 1; }
